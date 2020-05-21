@@ -1,0 +1,26 @@
+const  bannerJson=[
+	{
+		id:1,
+		imageUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589968034195&di=e1dab8a77046d58a855981c9f669d223&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn13%2F247%2Fw630h417%2F20180521%2F4f98-haturft7110759.jpg',
+		link:'',
+		name:'焰灵姬'
+	},
+	{
+		id:2,
+		imageUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589968034195&di=b3aff6ce06cdd3b88e04ff356f31508b&imgtype=0&src=http%3A%2F%2Fi1.hdslb.com%2Fbfs%2Farchive%2F52d7b1e48f61d4e66441ae6f24275bfd3dd80a88.jpg',
+		link:'',
+		name:'焰灵姬2'
+	},
+	{
+		id:3,
+		imageUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589968034194&di=43d36eb87b7ea09a9d15f12a67fcb246&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201705%2F02%2F20170502131440_GsQaU.thumb.700_0.png',
+		link:'',
+		name:'卫庄'
+	},
+	{
+		id:4,
+		imageUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589968034194&di=1c3c622d1cd6ee583d2e588b40baebd5&imgtype=0&src=http%3A%2F%2Fd.ifengimg.com%2Fw600%2Fp0.ifengimg.com%2Fpmop%2F2018%2F0711%2F47446388D9051A90B577C2246737CE1E6E4E2BEA_size350_w648_h410.png',
+		link:'',
+		name:'血衣侯'
+	},
+];

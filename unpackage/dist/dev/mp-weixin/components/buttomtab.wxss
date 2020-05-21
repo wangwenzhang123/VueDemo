@@ -1,0 +1,55 @@
+
+.icon-my_light:before {
+  content: "\e7d5";
+}
+.icon-home:before {
+  content: "\e6b8";
+}
+.footer-row{
+	height: 120rpx;
+}
+.footer{
+	position: fixed;
+	bottom: 0rpx;
+	left: 0rpx;
+	right: 0rpx;
+	z-index: 100;
+	background-color: #fafafa;
+	border-top: 1px solid #eee;
+	font-size: 33.6rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+.footer-item {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+	position: relative;
+	text-align: center;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	        flex: 1; 
+	text-decoration: none;
+	color: #929292;
+	padding: 16.8rpx 0rpx;
+	line-height: 1.4;
+	height: 120rpx;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.footer-active,.footer-active:before{
+	color: #007bff;
+}
+
