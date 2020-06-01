@@ -1,35 +1,31 @@
 <template>
 	<view class="content">
 		<swiper interval="3000" autoplay="true" indicator-color="red" indicator-dots="true" style="height: 400rpx;">
-			<swiper-item v-for="(item,index) in bannerList" :key="item.id" @click="getToInfo(item.imageUrl)" >
+			<swiper-item v-for="(item,index) in bannerList" :key="index" @click="getToList(item.type)" >
 				<view>
-				<image :src="item.imageUrl" style="width: 100%;"></image>	
+				<image :src="item.url" style="width: 100%;"></image>	
 				</view>
 			</swiper-item>
 			
 		</swiper>
 		<view class="m-navPic-group">'
-		<navigator v-for="(item,index) in navigatorList" :key='item.id' class="m-navPic-item">
+		<navigator v-for="(item,index) in navigatorList" :key='item.id' class="m-navPic-item" @click="getToList(item.url,item.title)">
 			<image class="m-navPic-img" :src="item.url" mode="widthFix"></image>
 			<text>{{item.title}}</text>
 		</navigator>
 		</view>
-		<uni-list>
-			<uni-list-item  v-for="(item,index) in list" :key="index" showArrow="false" @click="getToInfo(item)">
-				<image :src="item" style="width: auto;"></image>
-			</uni-list-item>
-		</uni-list>
+		<view class="buttom-list">
+			<image class="list-item" v-for="(item,index) in list" :key="index" @click="getToInfo(item)" :src="item" style="width: auto;"></image>
+		</view>
 		
 	</view>
 	
 </template>
 
 <script>
-	import uniList from "@/components/uni-list/uni-list.vue"
-	import uniListItem from "@/components/uni-list-item/uni-list-item.vue"
 	import buttonBar from "../../components/buttomtab.vue"
 	export default {
-		components:{uniList,uniListItem,buttonBar},
+		components:{buttonBar},
 		data() {
 			return {
 				title: 'Hello',
@@ -64,55 +60,43 @@
 			}
 		},
 		onLoad() {
-			uni.showTabBar({
-				
-			});
-			this.loadBanner()
+			uni.request({
+				url:'http://10.20.73.43:8012/task-web/picture/getBannerList',
+				header: {
+					'content-type': 'application/x-www-form-urlencoded', 
+				},
+				success: (res) => {
+					if(res.data.code == 200){
+						console.log(res.data.data)
+						this.bannerList=res.data.data
+					}
+				},
+				fail: (resu) => {
+					console.log(resu)
+				}
+			})
 		},
 		methods: {
-			getToInfo(imageUrl){
+			getToInfo(imageUrl){3
 				console.log('点击了');
-				//imageUrl='https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2075603309,1643497987&fm=15&gp=0.jpg';
+				//imageUrl='https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=207560309,1643497987&fm=15&gp=0.jpg';
 				uni.navigateTo({
 					url:'../info/info'+'?image='+encodeURIComponent(imageUrl)
 				})
 			},
-			async loadBanner(){
-				let res=await this.$api.json('bannerJson');
-				res=[
-	{
-		id:1,
-		imageUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589968034195&di=e1dab8a77046d58a855981c9f669d223&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn13%2F247%2Fw630h417%2F20180521%2F4f98-haturft7110759.jpg',
-		link:'',
-		name:'焰灵姬'
-	},
-	{
-		id:2,
-		imageUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589968034195&di=b3aff6ce06cdd3b88e04ff356f31508b&imgtype=0&src=http%3A%2F%2Fi1.hdslb.com%2Fbfs%2Farchive%2F52d7b1e48f61d4e66441ae6f24275bfd3dd80a88.jpg',
-		link:'',
-		name:'焰灵姬2'
-	},
-	{
-		id:3,
-		imageUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589968034194&di=43d36eb87b7ea09a9d15f12a67fcb246&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201705%2F02%2F20170502131440_GsQaU.thumb.700_0.png',
-		link:'',
-		name:'卫庄'
-	},
-	{
-		id:4,
-		imageUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1589968034194&di=1c3c622d1cd6ee583d2e588b40baebd5&imgtype=0&src=http%3A%2F%2Fd.ifengimg.com%2Fw600%2Fp0.ifengimg.com%2Fpmop%2F2018%2F0711%2F47446388D9051A90B577C2246737CE1E6E4E2BEA_size350_w648_h410.png',
-		link:'',
-		name:'血衣侯'
-	},
-];
-				console.log(res);
-				this.bannerList=res;
+			getToList(type){
+				console.log('点击了');
+				//imageUrl='https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2075603309,1643497987&fm=15&gp=0.jpg';
+				uni.navigateTo({
+					url:'../list/list'+'?type='+type/* +'&title='+title+"&id=12312312312" */
+				})
+			},
+			
 			}
 		}
-	}
 </script>
 
-<style>
+<style lang="scss">
 	.m-navPic-item{
 		flex-grow: 1;
 		width: 20%;
@@ -138,5 +122,15 @@
 		align-items: stretch;
 		flex-wrap: wrap;
 		background-color: #fff;
+	}
+	.buttom-list{
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		padding-left: 10upx;
+		padding-right: 10upx;
+	}
+	.list-item{
+		margin-bottom: 10upx;
 	}
 </style>

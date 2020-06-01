@@ -18,6 +18,18 @@
 			"style": {
 				"navigationBarTitleText": "详情"
 			}
+		},
+		{
+			"path": "pages/list/list",
+			"style": {
+				"navigationBarTitleText": "列表"
+			}
+		},
+		{
+			"path": "pages/upload/upload",
+			"style": {
+				"navigationBarTitleText": "上传图片"
+			}
 		}
 	],
 	"globalStyle": {

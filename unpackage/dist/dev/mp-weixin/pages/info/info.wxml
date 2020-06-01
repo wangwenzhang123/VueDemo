@@ -1,1 +1,1 @@
-<view class="nothing"><image src="{{url}}" mode="aspectFit"></image></view>
+<view class="nothing"><image class="m-navPic-img" src="{{url}}" mode="widthFix"></image></view>

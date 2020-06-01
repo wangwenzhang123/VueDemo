@@ -1,7 +1,7 @@
 <template>
 
 	<view class="nothing">
-		<image :src="url" mode="aspectFit" ></image>
+		<image :src="url" mode="widthFix" class="m-navPic-img"></image>
 	</view>
 </template>
 
@@ -21,7 +21,7 @@
 	
 <style>
 	.nothing{
-	        background: #464646;
+	        background: #000000;
 	        position: absolute;
 	        top: 0;
 	        left: 0;
@@ -30,5 +30,12 @@
 	        display: flex;
 	        justify-content: center;
 	        align-items: center;
+			}
+			.m-navPic-img{
+				
+				width: 100%;
+				height: 100%;
+				margin-bottom: 12rpx;
+				line-height: 1;
 			}
 </style>

@@ -1,6 +1,6 @@
 
 .nothing{
-        background: #464646;
+        background: #000000;
         position: absolute;
         top: 0;
         left: 0;
@@ -15,5 +15,12 @@
         -webkit-box-align: center;
         -webkit-align-items: center;
                 align-items: center;
+}
+.m-navPic-img{
+			
+			width: 100%;
+			height: 100%;
+			margin-bottom: 12rpx;
+			line-height: 1;
 }
 
