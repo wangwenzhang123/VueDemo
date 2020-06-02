@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "王神",
+  "usingComponents": {
+    "button-bar": "/components/buttomtab"
+  }
+}

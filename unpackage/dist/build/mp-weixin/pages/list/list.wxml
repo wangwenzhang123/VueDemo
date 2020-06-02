@@ -1,0 +1,1 @@
+<view><view class="list-contain"><block wx:for="{{list}}" wx:for-item="item" wx:for-index="key" wx:key="key"><view class="guess-item"><image class="image-wrapper" src="{{item.imageUrl}}" mode="widthFix" data-event-opts="{{[['tap',[['navigaTo',['$0'],[[['list','',key,'imageUrl']]]]]]]}}" bindtap="__e"></image></view></block></view></view>
